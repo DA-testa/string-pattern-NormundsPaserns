@@ -20,7 +20,7 @@ def read_input():
     return (input().rstrip(), input().rstrip())
 
 def print_occurrences(output):
-   """
+    """
     Prints the list of integers as a space-separated string.
     
     Args:
