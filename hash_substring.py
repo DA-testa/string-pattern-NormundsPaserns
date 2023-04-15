@@ -27,7 +27,7 @@ def print_occurrences(output):
     Returns:
     - None
     """
-    print(' '.join([str(x) for x in output]))
+    print(' '.join(map(str, output)))
 
 def get_occurrences(pattern, text):
     """
