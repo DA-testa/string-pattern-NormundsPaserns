@@ -11,7 +11,6 @@ def read_input():
         text = input("Enter text:").rstrip()
     elif input_type.upper() == 'F':
         #read from file
-        file_name = input("Enter file name:").rstrip()
         with open("tests/06" 'r') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
