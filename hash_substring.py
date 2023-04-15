@@ -1,7 +1,7 @@
 # python3
 
 def read_input():
-    input_type = input("Enter input type: (I) for keyboard, (F) for file")
+    input_type = input("Enter input type: (I) for keyboard, (F) for file").strip()
     pattern = ''
     text = ''
 
@@ -12,7 +12,7 @@ def read_input():
     elif input_type.upper() == 'F':
         #read from file
         file_name = input("Enter file name:").rstrip()
-        with open(file_name, 'r') as f:
+        with open("tests/06" 'r') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
     else:
