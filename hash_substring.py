@@ -46,14 +46,12 @@ def get_occurrences(pattern, text):
     d = 256 # the number of possible characters
 
     h = d**(p-1) % q # precompute the has for the pattern
-    pattern_hash = 0
+    pattern_hash = hash(pattern)
     text_hash = 0
     occurrences = []
 
     pattern = pattern.lower()
     text = text.lower()
-    pattern = pattern.upper()
-    text = text.upper()
 
     # compute the hash for the pattern and the first substring of the text
     for i in range(p):
