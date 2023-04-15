@@ -52,6 +52,8 @@ def get_occurrences(pattern, text):
 
     pattern = pattern.lower()
     text = text.lower()
+    pattern = pattern.upper()
+    text = text.upper()
 
     # compute the hash for the pattern and the first substring of the text
     for i in range(p):
