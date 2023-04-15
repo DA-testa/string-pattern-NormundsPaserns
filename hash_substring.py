@@ -1,7 +1,7 @@
 # python3
 
 def read_input():
-    input_type = input("Enter input type: (I) for keyboard, (F) for file").strip()
+    input_type = input().strip()
     pattern = ''
     text = ''
 
