@@ -50,10 +50,7 @@ def get_occurrences(pattern, text):
     text_hash = 0
     occurrences = []
 
-    pattern = pattern.lower()
-    text = text.lower()
-
-    # compute the hash for fpr the pattern and the first substring of the text
+    # compute the hash for the pattern and the first substring of the text
     for i in range(p):
         pattern_hash = (d*pattern_hash + ord(pattern[i])) % q
         text_hash = (d*text_hash + ord(text[i])) % q
@@ -73,4 +70,6 @@ def get_occurrences(pattern, text):
 
 # this part launches the functions
 if __name__ == '__main__':
-    print_occurrences(get_occurrences(*read_input()))
+    pattern, text = read_input()
+    occurrences = get_occurrences(pattern, text)
+    print_occurrences(occurrences)
