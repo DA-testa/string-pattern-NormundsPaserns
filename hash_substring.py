@@ -46,7 +46,7 @@ def get_occurrences(pattern, text):
     d = 256 # the number of possible characters
 
     h = d**(p-1) % q # precompute the has for the pattern
-    pattern_hash = hash(pattern)
+    pattern_hash = 0
     text_hash = 0
     occurrences = []
 
