@@ -2,7 +2,7 @@
 
 def read_input():
     input_type = input("Enter input type: (I) for keyboard, (F) for file")
-    patern = ''
+    pattern = ''
     text = ''
 
     if input_type.upper() == 'I':
@@ -12,12 +12,12 @@ def read_input():
     elif input_type.upper() == 'F':
         #read from file
         file_name = input("Enter file name:").rstrip()
-        with open("tests/06", 'r') as f:
+        with open(file_name, 'r') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
     else:
         print("Invalid input type. Please enter 'I' or 'F'.")
-    return (input().rstrip(), input().rstrip())
+    return pattern, text
 
 def print_occurrences(output):
     """
@@ -29,7 +29,7 @@ def print_occurrences(output):
     Returns:
     - None
     """
-    print(' '.join(map(str, output)))
+    print(' '.join([str(x) for x in output]))
 
 def get_occurrences(pattern, text):
     """
@@ -47,10 +47,13 @@ def get_occurrences(pattern, text):
     q = 101 # prime number used for hashing
     d = 256 # the number of possible characters
 
-    h = pow(d, p-1) % q # precompute the has for the pattern
+    h = d**(p-1) % q # precompute the has for the pattern
     pattern_hash = 0
     text_hash = 0
     occurrences = []
+
+    pattern = pattern.lower()
+    text = text.lower()
 
     # compute the hash for fpr the pattern and the first substring of the text
     for i in range(p):
@@ -60,7 +63,7 @@ def get_occurrences(pattern, text):
     #check if the hash values match and if the substrings match character by character
     for i in range(t-p+1):
         if pattern_hash == text_hash:
-            if pattern == text[i:i+p]:
+            if pattern == text[i:i+p].lower():
                 occurrences.append(i)
         
         #compute the hash for the next substring
