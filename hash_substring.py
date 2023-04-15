@@ -10,8 +10,7 @@ def read_input():
         pattern = input("Enter pattern:").rstrip()
         text = input("Enter text:").rstrip()
     elif input_type.upper() == 'F':
-        #read from file
-        with open("/workspaces/string-pattern-NormundsPaserns/tests/06" 'r') as f:
+        with open("tests/06" 'r') as f:
             pattern = f.readline().rstrip()
             text = f.readline().rstrip()
     else:
