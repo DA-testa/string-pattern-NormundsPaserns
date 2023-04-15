@@ -7,8 +7,8 @@ def read_input():
 
     if input_type.upper() == 'I':
         #read from keyboard
-        pattern = input("Enter pattern:").rstrip()
-        text = input("Enter text:").rstrip()
+        pattern = input().rstrip()
+        text = input().rstrip()
     elif input_type.upper() == 'F':
         with open("tests/06", 'r') as f:
             pattern = f.readline().rstrip()
